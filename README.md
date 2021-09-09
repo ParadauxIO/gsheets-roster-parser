@@ -5,8 +5,11 @@ You need to run this script locally for it to work, and you'll need to run the f
 ## Installing Dependencies
 `$ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
 
+Alternatively you can make use of the `requirements.txt` file which lists all the pip dependencies. 
+`$ pip install -r requirements.txt`
+
 ## Formatting roster.txt
-Due to API constaints I can't read the roster directly from the shared sheet, so you'll need to create a roster.txt formatted in the following way:
+Due to API constraints I can't read the roster directly from the shared sheet, so you'll need to create a roster.txt formatted in the following way:
 ```txt
 DD-MM-YYYY
 {{ROSTER}}
@@ -20,9 +23,7 @@ Hitting Ctrl + C to copy, and then pasting from the next line onwards. It should
 
 Only run this one week at a time.
 
-
-
 After that it's just a matter of running main.py
 `$ python3 main.py`
 
-You will be prompted to login to your google account, credentials are saved in token.json but you can either delete this or keep it so you don't need to login next time you go to login.
+You will be prompted to login to your google account, credentials are saved in token.json but you can either delete this or keep it so you don't need to login next time you go to parse your roster.
