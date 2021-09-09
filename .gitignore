@@ -7,3 +7,4 @@ venv/
 # Pycharm working dir
 .idea/
 
+__pycache__
