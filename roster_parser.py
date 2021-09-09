@@ -1,5 +1,8 @@
 from datetime import datetime
 
+removeables = ["(A)", "(Firstweek)"]
+class_types = ["Daily", "Weekly", "Thunkable", "J2", "J", "F2", "F", "PC", "LCCS", "Senior"]
+
 
 def roster_to_json(roster_location):
     f = open(roster_location, "r")
@@ -16,16 +19,21 @@ def roster_to_json(roster_location):
         if s.startswith("#"):
             continue
 
+        for removeable in removeables:
+            if removeable in s:
+                s = s.replace(removeable, "")
+
+        if s == "\n":
+            continue
+
         # Get just the timeperiod
         t = s[:-1]
-        if "Daily" in s:
-            t = t[t.find("Daily") + 6:]
+        # Summer 2021
 
-        if "Weekly" in s:
-            t = t[t.find("Weekly") + 7:]
-
-        if "Thunkable" in s:
-            t = t[t.find("Thunkable") + 10:]
+        for class_type in class_types:
+            if class_type in s:
+                t = t[t.find(class_type) + len(class_type) + 1:]
+                break
 
         original = original.replace(t, "") \
             .replace("\n", "") \
