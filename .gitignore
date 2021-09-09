@@ -1,2 +1,9 @@
 token.json
 credentials.json
+
+# Virtual Envoirnment for packages
+venv/
+
+# Pycharm working dir
+.idea/
+
