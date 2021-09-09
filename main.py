@@ -8,10 +8,15 @@ def main():
     date = roster["date"]
 
     event_count = 0
+    print(roster["times"])
 
     for day in roster["times"]:
+
+        if day == ['']:
+            continue
+
         for time in day:
-            roster_calendar_api.createEvent(date, time, roster["titles"][event_count])
+            roster_calendar_api.create_event(date, time, roster["titles"][event_count])
             event_count += 1
         date += timedelta(days=1)
 
