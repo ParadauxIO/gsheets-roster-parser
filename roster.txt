@@ -2,22 +2,17 @@
 # Start the first line with the date of the first entry.
 # Every line after that should be the raw copy/paste from google sheets.
 # Lines beginning with a # are ignored.
-"JP Daily 9:20-10:35
-SP Daily 11:50-13:05
-SP Weekly 13:50-15:05
-Sec Daily 15:20-16:35"
-"JP Daily 9:20-10:35
-SP Daily 11:50-13:05
-SP Weekly 13:50-15:05
-Sec Daily 15:20-16:35
-Sec Weekly 16:50-18:35"
-"JP Daily 9:20-10:35
-SP Daily 11:50-13:05
-SP Weekly 13:50-15:05"
-"JP Daily 9:20-10:35
-SP Daily 11:50-13:05
-Sec Daily 15:20-16:35
-Sec Weekly 16:50-18:35"
-"JP Daily 9:20-10:35
-SP Daily 11:50-13:05
-Sec Daily 15:20-16:35"
+"J 11:05-12:20
+Senior 12:20-14:05"
+
+"
+
+J 18:35-19:50"
+"Senior 17:35-19:20
+ Senior 19:20-21:05"
+"
+(Firstweek) F 17:50-19:05
+F2 19:05-20:20"
+"
+J 17:50-19:05
+Senior 19:20-21:05"
