@@ -6,7 +6,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 
 
-def createCredentials():
+def create_credentials():
     """Authenticates via Google OAuth2"""
     creds = None
     if os.path.exists('token.json'):
@@ -27,21 +27,21 @@ def createCredentials():
     return creds
 
 
-def createService():
+def create_service():
     """Creates a service for the Calender v3 API using the provided credentials."""
-    return build('calendar', 'v3', credentials=createCredentials())
+    return build('calendar', 'v3', credentials=create_credentials())
 
 
-def timeParser(date, period):
+def time_parser(date, period):
     hours_minutes = period.split(":")
 
     return date.replace(hour=int(hours_minutes[0]), minute=int(hours_minutes[1]))
 
 
-def createEvent(date, time_period, title):
+def create_event(date, time_period, title):
     times = str.split(time_period, "-")
-    start = timeParser(date, times[0])
-    end = timeParser(date, times[1])
+    start = time_parser(date, times[0])
+    end = time_parser(date, times[1])
     event = {
         'summary': title,
         'location': 'Virtual Venue',
@@ -62,5 +62,5 @@ def createEvent(date, time_period, title):
         },
     }
 
-    createService().events().insert(calendarId='primary', body=event).execute()
+    create_service().events().insert(calendarId='primary', body=event).execute()
     print(f"Creating Event: {date.strftime('%d-%m-%Y')} {title} from {times[0]}-{times[1]}")
